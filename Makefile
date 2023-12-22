@@ -4,6 +4,13 @@ PUSHSWAP = push_swap.a
 
 FILES = src/push_swap.c\
 src/checker.c\
+src/stacks.c\
+src/index.c\
+src/moves.c\
+src/moves2.c\
+src/moves3.c\
+src/algorithm.c\
+src/costs.c\
 
 OBJECTS = $(FILES:.c=.o)
 

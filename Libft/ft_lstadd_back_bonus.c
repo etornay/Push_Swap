@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 12:19:41 by etornay-          #+#    #+#             */
-/*   Updated: 2023/05/04 13:06:11 by etornay-         ###   ########.fr       */
+/*   Updated: 2023/12/19 14:27:16 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*actual;
+	t_list	*first_node;
 
-	actual = *lst;
-	if (!actual)
+	first_node = *lst;
+	if (new == NULL)
+		return ;
+	if (*lst == NULL)
 	{
 		*lst = new;
 		return ;
 	}
-	while (actual->next != 0)
-	{
-		actual = actual->next;
-	}
-	actual->next = new;
-	return ;
+	while (first_node->next != NULL)
+		first_node = first_node->next;
+	first_node->next = new;
 }

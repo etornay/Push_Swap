@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:27:06 by etornay-          #+#    #+#             */
-/*   Updated: 2023/12/18 12:08:55 by etornay-         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:49:22 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,52 +29,65 @@ void	free_arg(char **arg)
 	}
 }
 
-int	check_arg(t_abeja *abeja)
+int	check_arg2(t_data *data)
 {
 	int	i;
 	int	j;
 
-	if (abeja->arg == NULL)
-		return (EXIT_FAILURE);
-	if (abeja->arg[0] == NULL)
-		return (free_arg(abeja->arg), ft_printf("Error\n"), 1);
 	i = -1;
-	while (abeja->arg[++i] != NULL)
+	while (data->arg[++i] != NULL)
 	{
 		j = -1;
-		while (abeja->arg[i][++j] != '\0')
+		while (data->arg[i][++j] != '\0')
 		{
-			if (abeja->arg[i][j] == '-')
+			if (data->arg[i][j] == '-')
 				j++;
-			if (ft_isdigit(abeja->arg[i][j]) == '\0')
-				return (free_arg(abeja->arg), ft_printf("Error\n"), 1);
+			if (ft_isdigit(data->arg[i][j]) == '\0')
+			{
+				ft_printf("Error\n");
+				exit(EXIT_FAILURE);
+			}
 		}
 	}
 	return (EXIT_SUCCESS);
 }
 
-int	check_arg_split(char **argv, t_abeja *abeja)
+int	check_arg(char **argv, t_data *data)
+{
+	data->arg = argv + 1;
+	if (data->arg == NULL)
+		exit (EXIT_FAILURE);
+	if (data->arg[0] == NULL)
+	{
+		ft_printf("Error\n");
+		exit(EXIT_FAILURE);
+	}
+	check_arg2(data);
+	return (EXIT_SUCCESS);
+}
+
+int	check_arg_split(char **argv, t_data *data)
 {
 	int	i;
 	int	j;
 
 	if (argv[1] != NULL)
 	{
-		abeja->arg = ft_split(argv[1], ' ');
-		if (abeja->arg == NULL)
+		data->arg = ft_split(argv[1], ' ');
+		if (data->arg == NULL)
 			return (EXIT_FAILURE);
-		if (abeja->arg[0] == NULL)
-			return (free_arg(abeja->arg), ft_printf("Error\n"), 1);
+		if (data->arg[0] == NULL)
+			return (free_arg(data->arg), ft_printf("Error\n"), 1);
 		i = -1;
-		while (abeja->arg[++i] != NULL)
+		while (data->arg[++i] != NULL)
 		{
 			j = -1;
-			while (abeja->arg[i][++j] != '\0')
+			while (data->arg[i][++j] != '\0')
 			{
-				if (abeja->arg[i][j] == '-')
+				if (data->arg[i][j] == '-')
 					j++;
-				if (ft_isdigit(abeja->arg[i][j]) == '\0')
-					return (free_arg(abeja->arg), ft_printf("Error\n"), 1);
+				if (ft_isdigit(data->arg[i][j]) == '\0')
+					return (free_arg(data->arg), ft_printf("Error\n"), 1);
 			}
 		}
 	}

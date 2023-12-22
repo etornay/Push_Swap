@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:37:37 by etornay-          #+#    #+#             */
-/*   Updated: 2023/05/04 12:18:33 by etornay-         ###   ########.fr       */
+/*   Updated: 2023/12/19 14:28:46 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst == 0)
-		return (0);
-	while (lst->next != 0)
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
 	{
 		lst = lst->next;
 	}
