@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 14:13:59 by etornay-          #+#    #+#             */
-/*   Updated: 2023/12/22 16:59:11 by etornay-         ###   ########.fr       */
+/*   Updated: 2023/12/22 18:10:22 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*cheapest_cost(t_data *data)
 			result = aux;
 		aux = aux->next;
 	}
-	resturn (result);
+	return (result);
 }
 
 int	total_cost(t_list *node)
