@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:14:57 by etornay-          #+#    #+#             */
-/*   Updated: 2023/12/22 15:50:12 by etornay-         ###   ########.fr       */
+/*   Updated: 2023/12/27 17:41:44 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_data
 	char	**arg;
 	int		i;
 	int		flag;
+	t_list	*aux;
 	t_list	*a;
 	t_list	*b;
 	t_list	*max;
@@ -50,6 +51,14 @@ void	pos_stacks(t_data *data);
 void	tpos_stacks(t_data *data);
 void	cost_b(t_data *data);
 void	cost_a(t_data *data);
+int		ft_abs(int cost);
+int		total_cost(t_list *node);
+t_list	*cheapest_cost(t_data *data);
+void	final_moves(t_data *data);
+void	final_moves2(t_data *data);
+void	last_step(t_data *data);
+void	lst_print_structs(t_list **lst_a, t_list **lst_b);
+
 int		lee(t_data *data);
 
 #endif

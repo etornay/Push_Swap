@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:32:52 by etornay-          #+#    #+#             */
-/*   Updated: 2023/12/22 16:04:07 by etornay-         ###   ########.fr       */
+/*   Updated: 2023/12/27 17:59:40 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	main2(t_data *data)
 	init_stack_a(data);
 	set_index(data);
 	if (check_order(data) == EXIT_SUCCESS)
-		return (ft_printf("Numeros ordenados"), EXIT_SUCCESS);
+		return (ft_printf("Numeros ordenados\n"), EXIT_SUCCESS);
 	sort_values(data);
-	lee(data);
+	//lee(data);
 	return (EXIT_SUCCESS);
 }
 
