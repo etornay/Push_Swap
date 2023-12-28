@@ -6,11 +6,36 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:27:06 by etornay-          #+#    #+#             */
-/*   Updated: 2023/12/18 16:49:22 by etornay-         ###   ########.fr       */
+/*   Updated: 2023/12/28 18:00:01 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	repeat_numbers(t_data *data)
+{
+	int	i;
+	int	j;
+	int	flag;
+
+	i = 0;
+	flag = 0;
+	while (data->arg[i] != NULL)
+	{
+		j = 0;
+		while (data->arg[j] != NULL)
+		{
+			if (ft_atoi(data->arg[i]) == ft_atoi(data->arg[j]))
+				flag++;
+			j++;
+		}
+		if (flag > 1)
+			return (ft_printf("Error: Repetidos\n"), EXIT_FAILURE);
+		flag = 0;
+		i++;
+	}
+	return (EXIT_SUCCESS);
+}
 
 void	free_arg(char **arg)
 {
@@ -44,7 +69,7 @@ int	check_arg2(t_data *data)
 				j++;
 			if (ft_isdigit(data->arg[i][j]) == '\0')
 			{
-				ft_printf("Error\n");
+				ft_printf("Error: Argumento no numérico\n");
 				exit(EXIT_FAILURE);
 			}
 		}
@@ -62,6 +87,8 @@ int	check_arg(char **argv, t_data *data)
 		ft_printf("Error\n");
 		exit(EXIT_FAILURE);
 	}
+	if (repeat_numbers(data) == EXIT_FAILURE)
+		return (EXIT_FAILURE);
 	check_arg2(data);
 	return (EXIT_SUCCESS);
 }
@@ -77,7 +104,7 @@ int	check_arg_split(char **argv, t_data *data)
 		if (data->arg == NULL)
 			return (EXIT_FAILURE);
 		if (data->arg[0] == NULL)
-			return (free_arg(data->arg), ft_printf("Error\n"), 1);
+			return (free_arg(data->arg), ft_printf("Error: Incorrecto\n"), 1);
 		i = -1;
 		while (data->arg[++i] != NULL)
 		{
@@ -87,7 +114,7 @@ int	check_arg_split(char **argv, t_data *data)
 				if (data->arg[i][j] == '-')
 					j++;
 				if (ft_isdigit(data->arg[i][j]) == '\0')
-					return (free_arg(data->arg), ft_printf("Error\n"), 1);
+					return (free_arg(data->arg), ft_printf("Error: Nulo\n"), 1);
 			}
 		}
 	}

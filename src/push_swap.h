@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:14:57 by etornay-          #+#    #+#             */
-/*   Updated: 2023/12/27 17:41:44 by etornay-         ###   ########.fr       */
+/*   Updated: 2023/12/28 18:00:31 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		check_arg(char **argv, t_data *data);
 int		init_stack_a(t_data *data);
 void	set_index(t_data *data);
 int		check_order(t_data *data);
+int		repeat_numbers(t_data *data);
 void	pa(t_data *data, int flag);
 void	pb(t_data *data, int flag);
 void	sa(t_data *data, int flag);
@@ -45,7 +46,7 @@ void	rr(t_data *data, int flag);
 void	rra(t_data *data, int flag);
 void	rrb(t_data *data, int flag);
 void	rrr(t_data *data, int flag);
-int		sort_values(t_data *data);
+void	sort_values(t_data *data);
 void	values_3(t_data *data);
 void	pos_stacks(t_data *data);
 void	tpos_stacks(t_data *data);
@@ -58,7 +59,6 @@ void	final_moves(t_data *data);
 void	final_moves2(t_data *data);
 void	last_step(t_data *data);
 void	lst_print_structs(t_list **lst_a, t_list **lst_b);
-
-int		lee(t_data *data);
+void	free_arg(char **arg);
 
 #endif

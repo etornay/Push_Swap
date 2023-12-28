@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:13:24 by etornay-          #+#    #+#             */
-/*   Updated: 2023/12/27 17:48:30 by etornay-         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:53:58 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,6 @@ void	final_moves2(t_data *data)
 void	final_moves(t_data *data)
 {
 	data->aux = data->stack_b;
-	/* if (total_cost(data->a) > total_cost(data->a->next) + 1
-		&& data->a->index > data->a->next->index)
-		sa(data, 1); */
 	while (data->stack_b->cost_a > 0 && data->stack_b->cost_b > 0)
 	{
 		rr(data, 1);

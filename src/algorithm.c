@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:10:59 by etornay-          #+#    #+#             */
-/*   Updated: 2023/12/27 17:52:35 by etornay-         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:48:25 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,33 +105,25 @@ void	values_3(t_data *data)
 		sa(data, 1);
 }
 
-int	sort_values(t_data *data)
+void	sort_values(t_data *data)
 {
 	t_list	*aux;
 
 	aux = data->stack_a;
-	if (ft_lstsize(aux) == 2)
-		sa(data, 1);
-	else if (ft_lstsize(aux) == 3)
-		values_3(data);
-	else
+	while (ft_lstsize(data->stack_a) > 3)
+		pb(data, 1);
+	values_3(data);
+	while (data->stack_b)
 	{
-		while (ft_lstsize(data->stack_a) > 3)
-			pb(data, 1);
-		values_3(data);
-		while (data->stack_b)
-		{
-			pos_stacks(data);
-			tpos_stacks(data);
-			cost_b(data);
-			cost_a(data);
-			total_cost(aux);
-			aux = cheapest_cost(data);
-			/* lst_print_structs(&data->stack_a, &data->stack_b); */
-			final_moves(data);
-		}
-		while (check_order(data) != 0)
-			last_step(data);
+		pos_stacks(data);
+		tpos_stacks(data);
+		cost_b(data);
+		cost_a(data);
+		total_cost(aux);
+		aux = cheapest_cost(data);
+		/* lst_print_structs(&data->stack_a, &data->stack_b); */
+		final_moves(data);
 	}
-	return (EXIT_SUCCESS);
+	while (check_order(data) != 0)
+		last_step(data);
 }

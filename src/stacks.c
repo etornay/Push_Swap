@@ -6,34 +6,11 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:40:03 by etornay-          #+#    #+#             */
-/*   Updated: 2023/12/27 17:30:08 by etornay-         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:09:18 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	lee(t_data *data)
-{
-	t_list	*x;
-	t_list	*y;
-
-	x = data->stack_a;
-	y = data->stack_b;
-	ft_printf("\nStack a :\n");
-	while (x != NULL)
-	{
-		ft_printf("Valor = %d Indice = %d \n", x->value, x->index);
-		x = x->next;
-	}
-	ft_printf("\nStack b :\n");
-	while (y != NULL)
-	{
-		ft_printf("Valor = %d Indice = %d Pos = %d TPos = %d Cost_b = %d Cost_a = %d \n", y->value, y->index, y->pos, y->target_pos, y->cost_b, y->cost_a);
-		y = y->next;
-	}
-	ft_printf("\nCoste Total : %d\n\n", total_cost(data->stack_b));
-	return (EXIT_SUCCESS);
-}
 
 int	repeat(t_data *data, long long int n)
 {
