@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 14:13:59 by etornay-          #+#    #+#             */
-/*   Updated: 2023/12/27 15:34:20 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/01/02 13:15:00 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 t_list	*cheapest_cost(t_data *data)
 {
-	t_list	*result;
+	t_list	*cheap;
 	t_list	*aux;
 
 	aux = data->stack_b;
-	result = NULL;
+	cheap = NULL;
 	while (aux != NULL)
 	{
-		if (result == NULL || total_cost(aux) < total_cost(result))
-			result = aux;
+		if (cheap == NULL || total_cost(aux) < total_cost(cheap))
+			cheap = aux;
 		aux = aux->next;
 	}
-	return (result);
+	return (cheap);
 }
 
 int	total_cost(t_list *node)

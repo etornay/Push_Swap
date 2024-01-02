@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:10:59 by etornay-          #+#    #+#             */
-/*   Updated: 2023/12/28 15:48:25 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/01/02 14:12:40 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,6 @@ void	values_3(t_data *data)
 
 void	sort_values(t_data *data)
 {
-	t_list	*aux;
-
-	aux = data->stack_a;
 	while (ft_lstsize(data->stack_a) > 3)
 		pb(data, 1);
 	values_3(data);
@@ -119,9 +116,7 @@ void	sort_values(t_data *data)
 		tpos_stacks(data);
 		cost_b(data);
 		cost_a(data);
-		total_cost(aux);
-		aux = cheapest_cost(data);
-		/* lst_print_structs(&data->stack_a, &data->stack_b); */
+		data->aux = cheapest_cost(data);
 		final_moves(data);
 	}
 	while (check_order(data) != 0)

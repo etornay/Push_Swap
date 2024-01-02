@@ -12,7 +12,6 @@ src/moves3.c\
 src/algorithm.c\
 src/costs.c\
 src/algorithm_utils.c\
-src/print.c\
 
 OBJECTS = $(FILES:.c=.o)
 
