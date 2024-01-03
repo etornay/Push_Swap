@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:32:52 by etornay-          #+#    #+#             */
-/*   Updated: 2024/01/02 14:09:02 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/01/02 16:17:01 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	main2(t_data *data)
 
 	if (repeat_numbers(data) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
-	init_stack_a(data);
+	if (init_stack_a(data) == EXIT_FAILURE)
+		return (EXIT_FAILURE);
 	set_index(data);
 	if (check_order(data) == EXIT_SUCCESS)
 		return (EXIT_SUCCESS);
