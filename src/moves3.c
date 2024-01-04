@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:41:13 by etornay-          #+#    #+#             */
-/*   Updated: 2023/12/21 15:01:53 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:12:16 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rra(t_data *data, int flag)
 	t_list	*aux;
 	t_list	*aux_last;
 
-	if (data->stack_a == NULL)
+	if (ft_lstsize(data->stack_a) < 2)
 		return ;
 	aux = data->stack_a;
 	aux_last = ft_lstlast(data->stack_a);
@@ -34,7 +34,7 @@ void	rrb(t_data *data, int flag)
 	t_list	*aux;
 	t_list	*aux_last;
 
-	if (data->stack_b == NULL)
+	if (ft_lstsize(data->stack_b) < 2)
 		return ;
 	aux = data->stack_b;
 	aux_last = ft_lstlast(data->stack_b);

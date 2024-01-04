@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:05 by etornay-          #+#    #+#             */
-/*   Updated: 2024/01/02 12:39:30 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:12:31 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ra(t_data *data, int flag)
 {
 	t_list	*aux;
 
-	if (data->stack_a == NULL)
+	if (ft_lstsize(data->stack_a) < 2)
 		return ;
 	aux = data->stack_a;
 	data->stack_a = data->stack_a->next;
@@ -30,7 +30,7 @@ void	rb(t_data *data, int flag)
 {
 	t_list	*aux;
 
-	if (data->stack_b == NULL)
+	if (ft_lstsize(data->stack_b) < 2)
 		return ;
 	aux = data->stack_b;
 	data->stack_b = data->stack_b->next;
