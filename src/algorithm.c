@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:10:59 by etornay-          #+#    #+#             */
-/*   Updated: 2024/01/02 15:56:16 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:28:16 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 int	order_stack_a(t_data *data)
 {
-	t_list	*a;
+	int		i;
+	int		size;
+	t_list	*aux;
 
-	a = data->stack_a;
-	while (a->next != NULL)
+	i = 1;
+	aux = data->stack_a;
+	size = ft_lstsize(data->stack_a);
+	while (size >= i)
 	{
-		if (a->index < a->next->index)
-			a = a->next;
-		else if (a->index > a->next->index)
-			return (1);
+		if (i != aux->index)
+			return (EXIT_FAILURE);
+		aux = aux->next;
+		i++;
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
 void	tpos_stacks(t_data *data)

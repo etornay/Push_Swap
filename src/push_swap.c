@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:32:52 by etornay-          #+#    #+#             */
-/*   Updated: 2024/01/02 16:17:01 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:20:13 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /* void	ft_leaks(void)
 {
 	system("leaks -q push_swap");
-} atexit(ft_leaks); */
+}atexit(ft_leaks); */
 
 void	del_content(int content)
 {
@@ -27,9 +27,9 @@ int	main2(t_data *data)
 	t_list	*aux;
 
 	if (repeat_numbers(data) == EXIT_FAILURE)
-		return (EXIT_FAILURE);
+		exit (EXIT_FAILURE);
 	if (init_stack_a(data) == EXIT_FAILURE)
-		return (EXIT_FAILURE);
+		exit (EXIT_FAILURE);
 	set_index(data);
 	if (check_order(data) == EXIT_SUCCESS)
 		return (EXIT_SUCCESS);
@@ -48,20 +48,20 @@ int	main(int argc, char **argv)
 
 	data = ft_calloc(1, sizeof(t_data));
 	if (data == NULL)
-		return (free(data), EXIT_FAILURE);
+		exit (EXIT_FAILURE);
 	if (argc == 2)
 	{
 		if (check_arg_split(argv, data) == EXIT_FAILURE)
-			return (free(data), EXIT_FAILURE);
+			exit (EXIT_FAILURE);
 	}
 	else if (argc > 1)
 	{
 		if (check_arg(argv, data) == EXIT_FAILURE)
-			return (free(data), EXIT_FAILURE);
+			exit (EXIT_FAILURE);
 	}
 	else
-		return (free(data), EXIT_FAILURE);
+		exit (EXIT_FAILURE);
 	if (main2(data) == EXIT_FAILURE)
-		return (free(data), EXIT_FAILURE);
+		exit (EXIT_FAILURE);
 	exit (EXIT_SUCCESS);
 }

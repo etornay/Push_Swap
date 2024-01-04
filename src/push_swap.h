@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:14:57 by etornay-          #+#    #+#             */
-/*   Updated: 2024/01/02 14:13:40 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/01/02 17:26:21 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void			final_moves(t_data *data);
 void			final_moves2(t_data *data);
 void			last_step(t_data *data);
 void			free_arg(char **arg);
+int				order_stack_a(t_data *data);
 
 #endif

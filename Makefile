@@ -7,7 +7,7 @@ PUSH_SWAP = push_swap.a
 PUSH_SWAP_BONUS = checker.a
 
 FILES = src/push_swap.c\
-src/checker.c\
+src/check_num.c\
 src/stacks.c\
 src/index.c\
 src/moves.c\
@@ -37,7 +37,7 @@ $(NAME_BONUS):		$(OBJECTS_BONUS) $(OBJECTS) $(LIBFT)
 						ar rcs $(PUSH_SWAP_BONUS) $(OBJECTS_BONUS) $(OBJECTS)
 						gcc $(FLAGS) $(PUSH_SWAP_BONUS) $(LIBFT) $(LIB_SYS) -o $(NAME_BONUS)
 
-$(OBJECTS):	src/%.o : src/%.c
+$(OBJECTS):			src/%.o : src/%.c
 						gcc $(FLAGS) -c $< -o $@
 
 $(OBJECTS_BONUS):	srcb/%.o : srcb/%.c

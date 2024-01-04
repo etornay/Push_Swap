@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   check_num.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:27:06 by etornay-          #+#    #+#             */
-/*   Updated: 2024/01/02 14:11:37 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:30:56 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,15 @@ int	repeat_numbers(t_data *data)
 	int	j;
 	int	flag;
 
-	i = 0;
+	i = -1;
 	flag = 0;
-	while (data->arg[i] != NULL)
+	while (data->arg[++i] != NULL)
 	{
+		if (atol(data->arg[i]) < MIN_INT || atol(data->arg[i]) > MAX_INT)
+		{
+			ft_printf("Error\n");
+			exit (EXIT_FAILURE);
+		}
 		j = 0;
 		while (data->arg[j] != NULL)
 		{
@@ -32,7 +37,6 @@ int	repeat_numbers(t_data *data)
 		if (flag > 1)
 			return (ft_printf("Error\n"), EXIT_FAILURE);
 		flag = 0;
-		i++;
 	}
 	return (EXIT_SUCCESS);
 }
@@ -65,6 +69,11 @@ int	check_arg2(t_data *data)
 		j = -1;
 		while (data->arg[i][++j] != '\0')
 		{
+			if (data->arg[i][j + 1] == '-')
+			{
+				ft_printf("Error\n");
+				exit (EXIT_FAILURE);
+			}
 			if (data->arg[i][j] == '-')
 				j++;
 			if (ft_isdigit(data->arg[i][j]) == '\0')
