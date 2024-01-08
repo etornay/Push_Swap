@@ -6,7 +6,7 @@
 /*   By: etornay- <etornay-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:27:06 by etornay-          #+#    #+#             */
-/*   Updated: 2024/01/04 14:30:56 by etornay-         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:29:33 by etornay-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	repeat_numbers(t_data *data)
 	flag = 0;
 	while (data->arg[++i] != NULL)
 	{
-		if (atol(data->arg[i]) < MIN_INT || atol(data->arg[i]) > MAX_INT)
+		if (ft_atol(data->arg[i]) < MIN_INT || ft_atol(data->arg[i]) > MAX_INT)
 		{
 			ft_printf("Error\n");
 			exit (EXIT_FAILURE);
