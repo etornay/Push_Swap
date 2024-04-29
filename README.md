@@ -12,10 +12,10 @@ instrucciones para manipular ambos stacks.
 
 • Para empezar:
 
-  _◦ El stack a contiene una cantidad aleatoria de números positivos y/o negativos,
+_◦ El stack a contiene una cantidad aleatoria de números positivos y/o negativos,
 nunca duplicados._
 
-  _◦ El stack b está vacío._
+_◦ El stack b está vacío._
 
 • El objetivo es ordenar los números del stack a en orden ascendente. Para hacerlo
 tienes las siguientes operaciones a tu disposición:
