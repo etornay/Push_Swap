@@ -1,4 +1,4 @@
-Push_swap es un proyecto de algoritmia simple y muy efectivo: tienes que ordenar
+Push_Swap es un proyecto de algoritmia simple y muy efectivo: tienes que ordenar
 datos.
 
 Tienes a tu disposición un conjunto de valores enteros, 2 stacks y un conjunto de
